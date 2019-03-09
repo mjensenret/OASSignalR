@@ -1,0 +1,58 @@
+﻿@page
+@{
+    Layout = "_DevExtremeLayout";
+    ViewData["Title"] = "DX Chat Test";
+}
+@(Html.DevExtreme().Form()
+    .ID("chatForm")
+    .Items(i =>
+    {
+        i.AddGroup()
+            .Caption("Enter stuff")
+            .Items(gi =>
+            {
+            gi.AddSimple()
+            .Name("User")
+            .Editor(e => e
+                .TextBox());
+            gi.AddSimple()
+            .Name("Message")
+            .Editor(e => e
+                .TextArea());
+            gi.AddButton()
+                .Name("btnSubmit")
+                .ButtonOptions(b =>b
+                    .Text("Send Message")
+                    .OnClick("sendMessage")
+                    .Visible(false)
+                    .UseSubmitBehavior(true));
+    });
+})
+)
+
+<div class="row">
+     <div class="col-sm-12">
+         @(Html.DevExtreme().TextArea()
+            .ID("messages")
+        )
+     </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-3">
+        @(Html.DevExtreme().TextBox()
+            .ID("txtVersion")
+        )
+    </div>
+    <div class="col-sm-3">
+        @(Html.DevExtreme().Button()
+            .ID("btnGetVersion")
+            .OnClick("getVersion")
+            .Text("Get OAS Version")
+        )
+    </div>
+</div>
+
+<script src="~/lib/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/dxChat.js"></script>
+
