@@ -17,7 +17,7 @@ namespace OASSignalR.Hubs
         public async Task VersionNumber()
         {
             int versionNumber = 0;
-            versionNumber = OASDataComponents._oasConfig.GetVersion();
+            versionNumber = OASDataComponents._oasConfig.GetVersion("ops-dev.savageservices.com");
 
             await Clients.All.SendAsync("ReceiveVersion", versionNumber);
         }

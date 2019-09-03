@@ -7,7 +7,7 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
-    <PackageReference Include="DevExtreme.AspNet.Core" Version="18.2.6" />
+    <PackageReference Include="DevExtreme.AspNet.Core" Version="18.2.7" />
     <PackageReference Include="DevExtreme.AspNet.Data" Version="2.0.0" />
   </ItemGroup>
   <ItemGroup>
@@ -21,4 +21,9 @@
       <HintPath>..\..\..\..\Downloads\OASCore\OASData.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties DismissedDevExtremeVersion="18.2.7" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>
